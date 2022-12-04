@@ -1,17 +1,17 @@
-import React from "react";
+import React from 'react';
 
 const UserPost = () => {
-  const [username, setUsername] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
+  const [username, setUsername] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
 
   function handleSubmit(event) {
     event.preventDefault();
 
     fetch(`${URL}/api/user`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         username,
@@ -32,22 +32,22 @@ const UserPost = () => {
   return (
     <form onSubmit={handleSubmit}>
       <input
-        type="text"
-        placeholder="Username"
+        type='text'
+        placeholder='Username'
         value={username}
         onChange={({ target }) => setUsername(target.value)}
       />
 
       <input
-        type="text"
-        placeholder="Password"
+        type='text'
+        placeholder='Password'
         value={password}
         onChange={({ target }) => setPassword(target.value)}
       />
 
       <input
-        type="text"
-        placeholder="Email"
+        type='text'
+        placeholder='Email'
         value={email}
         onChange={({ target }) => setEmail(target.value)}
       />

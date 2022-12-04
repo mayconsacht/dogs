@@ -1,10 +1,10 @@
-import React from "react";
-import Input from "../Forms/Input";
+import React from 'react';
+import Input from '../Forms/Input';
 
 const LoginCreate = () => {
-  const [username, setUsername] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [email, setEmail] = React.useState("");
+  const [username, setUsername] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const [email, setEmail] = React.useState('');
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -12,24 +12,24 @@ const LoginCreate = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Input label="Username" />
+      <Input label='Username' />
       <input
-        type="text"
-        placeholder="Username"
+        type='text'
+        placeholder='Username'
         value={username}
         onChange={({ target }) => setUsername(target.value)}
       />
 
       <input
-        type="text"
-        placeholder="Password"
+        type='text'
+        placeholder='Password'
         value={password}
         onChange={({ target }) => setPassword(target.value)}
       />
 
       <input
-        type="text"
-        placeholder="Email"
+        type='text'
+        placeholder='Email'
         value={email}
         onChange={({ target }) => setEmail(target.value)}
       />

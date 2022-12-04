@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 const useForm = () => {
-  const [value, setValue] = React.useState("");
+  const [value, setValue] = React.useState('');
 
   function onChange({ target }) {
     setValue(target.value);

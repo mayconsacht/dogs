@@ -1,5 +1,5 @@
-import React from "react";
-import UserPost from "./endpoints/UserPost";
+import React from 'react';
+import UserPost from './endpoints/UserPost';
 
 const Api = () => {
   return (
