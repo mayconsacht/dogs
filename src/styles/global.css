@@ -90,7 +90,7 @@ input {
   display: block;
   height: 1.5rem;
   width: 1.5rem;
-  background: #fb1;
+  background: rgb(176, 126, 0);
   position: absolute;
   bottom: 5px;
   left: -5px;
