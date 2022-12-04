@@ -1,27 +1,27 @@
-import React from 'react';
-import URL from '../URL';
+import React from "react";
+import URL from "../URL";
 
 const PhotoPost = () => {
-  const [token, setToken] = React.useState('');
-  const [nome, setNome] = React.useState('');
-  const [peso, setPeso] = React.useState('');
-  const [idade, setIdade] = React.useState('');
-  const [img, setImg] = React.useState('');
+  const [token, setToken] = React.useState("");
+  const [nome, setNome] = React.useState("");
+  const [peso, setPeso] = React.useState("");
+  const [idade, setIdade] = React.useState("");
+  const [img, setImg] = React.useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
 
     const formData = new FormData();
-    formData.append('img', img);
-    formData.append('nome', nome);
-    formData.append('peso', peso);
-    formData.append('idade', idade);
+    formData.append("img", img);
+    formData.append("nome", nome);
+    formData.append("peso", peso);
+    formData.append("idade", idade);
     console.log(formData);
 
     fetch(`${URL}/api/photo`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        Authorization: 'Bearer ' + token,
+        Authorization: "Bearer " + token,
       },
       body: formData,
     })

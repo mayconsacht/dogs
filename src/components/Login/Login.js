@@ -1,9 +1,9 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import LoginCreate from './LoginCreate'
-import LoginForgot from './LoginForgot'
-import LoginForm from './LoginForm'
-import LoginReset from './LoginReset'
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import LoginCreate from "./LoginCreate";
+import LoginForgot from "./LoginForgot";
+import LoginForm from "./LoginForm";
+import LoginReset from "./LoginReset";
 
 const Login = () => {
   return (
@@ -15,7 +15,7 @@ const Login = () => {
         <Route path="reset" element={<LoginReset />} />
       </Routes>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
