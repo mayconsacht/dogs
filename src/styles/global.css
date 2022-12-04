@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap');
+
 :root {
   --font-size-xxs: 0.64rem;
   --font-size-xs: 0.8125rem;
@@ -19,8 +21,8 @@
 
   --color-background-start: #212121;
   --color-background-end: #121212;
-  --base-type: "Nunito Sans", Arial, sans-serif;
-  --second-type: "Spectral", Georgia;
+  --base-type: 'Nunito Sans', Arial, sans-serif;
+  --second-type: 'Spectral', Georgia;
 }
 
 * {
@@ -37,6 +39,7 @@ body {
 
 a {
   text-decoration: none;
+  color: white;
 }
 
 h1,
@@ -71,4 +74,45 @@ input {
   max-width: 50rem;
   padding: 0 1rem;
   margin: 0 auto;
+}
+
+.title {
+  font-weight: var(--base-type);
+  line-height: 1;
+  font-size: 3rem;
+  margin: 1rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.title::after {
+  content: '';
+  display: block;
+  height: 1.5rem;
+  width: 1.5rem;
+  background: #fb1;
+  position: absolute;
+  bottom: 5px;
+  left: -5px;
+  border-radius: 0.2rem;
+  z-index: -1;
+}
+
+.animeLeft {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: animeLeft 0.3s forwards;
+}
+
+.error {
+  color: #f31;
+  font-size: var(--font-size-s);
+  margin-top: var(--font-size-xs);
+}
+
+@keyframes animeLeft {
+  to {
+    opacity: 1;
+    transform: initial;
+  }
 }

@@ -26,9 +26,3 @@
   line-height: 1;
   padding-bottom: 0.5rem;
 }
-
-.error {
-  color: #f31;
-  font-size: var(--font-size-s);
-  margin-top: var(--font-size-xs);
-}

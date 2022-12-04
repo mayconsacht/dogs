@@ -1,0 +1,41 @@
+.form {
+  margin-bottom: 2rem;
+}
+
+.forgot {
+  color: #58a6ff;
+  display: inline-block;
+  padding: 0.5rem 0;
+  line-height: 1;
+}
+
+.forgot::hover {
+  content: '';
+  height: 2px;
+  width: 100%;
+  background-color: currentColor;
+  display: block;
+}
+
+.register {
+  margin-top: 4rem;
+}
+
+.register p {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  line-height: 1;
+  font-size: 2rem;
+}
+
+.subtitle::after {
+  content: '';
+  display: block;
+  background-color: #ddd;
+  width: 3rem;
+  height: 0.5rem;
+  border-radius: 0.2rem;
+}
