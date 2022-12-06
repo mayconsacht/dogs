@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;700&display=swap');
 
 :root {
   --font-size-xxs: 0.64rem;
@@ -33,6 +33,7 @@ body {
   margin: 0;
   color: white;
   font-family: var(--base-type);
+  font-weight: 700;
   padding-top: 4rem;
   background-color: var(--color-darker-grey);
 }
