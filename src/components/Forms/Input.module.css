@@ -4,6 +4,7 @@
 
 .input {
   border: 1px solid #eee;
+  color: #eee;
   display: block;
   width: 100%;
   font-size: var(--font-size-s);

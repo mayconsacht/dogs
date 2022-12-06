@@ -34,19 +34,19 @@ const LoginForm = () => {
         )}
 
         <Error error={error} />
-
-        <Link className={styles.forgot} to='/login/forgot'>
-          Forgot password?
-        </Link>
-
-        <div className={styles.register}>
-          <h2 className={styles.subtitle}>Sign up</h2>
-          <p>New to Dogs? Create an account!</p>
-          <Link className={stylesButton.button} to='/login/signup'>
-            Sign up
-          </Link>
-        </div>
       </form>
+
+      <Link className={styles.forgot} to='/login/forgot'>
+        Forgot password?
+      </Link>
+
+      <div className={styles.register}>
+        <h2 className={styles.subtitle}>Sign up</h2>
+        <p>New to Dogs? Create an account!</p>
+        <Link className={stylesButton.button} to='/login/signup'>
+          Sign up
+        </Link>
+      </div>
     </section>
   );
 };

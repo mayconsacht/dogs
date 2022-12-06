@@ -1,6 +1,7 @@
 .button {
   font-size: var(--font-size-s);
   font-family: var(--base-type);
+  font-weight: 700;
   cursor: pointer;
   border: none;
   border-radius: 0.4rem;
