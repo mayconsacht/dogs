@@ -1,74 +1,119 @@
-:root {
-    --font-size-xxs: 0.64rem;
-    --font-size-xs: 0.8125rem;
-    --font-size-s: 0.875rem;
-    --font-size-m: 1rem;
-    --font-size-l: 1.25rem;
-    --font-size-xl: 1.563rem;
-    --font-size-xxl: 1.953rem;
-    --font-size-x-heading: 2.441rem;
-    --font-size-xx-heading: 3.052rem;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;700&display=swap');
 
-    --color-dark-grey: #2c2c2c;
-    --color-darker-grey: #161b22;
-    --color-grey: #717171;
-    --color-light-grey: #b3b3b3;
-    --color-bg: #0d1117;
-    --color-black: #000;
-    --color-white: #fff;
-  
-    --color-background-start: #212121;
-    --color-background-end: #121212;
-    --base-type: 'Nunito Sans', Arial, sans-serif;
-    --second-type: 'Spectral', Georgia;
+:root {
+  --font-size-xxs: 0.64rem;
+  --font-size-xs: 0.8125rem;
+  --font-size-s: 0.875rem;
+  --font-size-m: 1rem;
+  --font-size-l: 1.25rem;
+  --font-size-xl: 1.563rem;
+  --font-size-xxl: 1.953rem;
+  --font-size-x-heading: 2.441rem;
+  --font-size-xx-heading: 3.052rem;
+
+  --color-dark-grey: #2c2c2c;
+  --color-darker-grey: #161b22;
+  --color-grey: #717171;
+  --color-light-grey: #b3b3b3;
+  --color-bg: #0d1117;
+  --color-black: #000;
+  --color-white: #fff;
+
+  --color-background-start: #212121;
+  --color-background-end: #121212;
+  --base-type: 'Nunito Sans', Arial, sans-serif;
+  --second-type: 'Spectral', Georgia;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    color: white;
-    font-family: var(--base-type);
-    padding-top: 4rem;
-    background-color: var(--color-darker-grey);
+  margin: 0;
+  color: white;
+  font-family: var(--base-type);
+  font-weight: 700;
+  padding-top: 4rem;
+  background-color: var(--color-darker-grey);
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
+  color: white;
 }
 
-h1, 
+h1,
 h2,
 h3,
 h4,
 p {
-    margin: 0;
+  margin: 0;
 }
 
-ul, 
+ul,
 li {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 img {
-    display: block;
-    max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
 button,
 input {
-    display: block;
-    font-size: 1rem;
-    font-family: (--base-type);
-    color: #333;
+  display: block;
+  font-size: 1rem;
+  font-family: (--base-type);
+  color: #333;
 }
 
 .container {
-    max-width: 50rem;
-    padding: 0 1rem;
-    margin: 0 auto;
+  max-width: 50rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.title {
+  font-weight: var(--base-type);
+  line-height: 1;
+  font-size: 3rem;
+  margin: 1rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.title::after {
+  content: '';
+  display: block;
+  height: 1.5rem;
+  width: 1.5rem;
+  background: rgb(176, 126, 0);
+  position: absolute;
+  bottom: 5px;
+  left: -5px;
+  border-radius: 0.2rem;
+  z-index: -1;
+}
+
+.animeLeft {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: animeLeft 0.3s forwards;
+}
+
+.error {
+  color: #f31;
+  font-size: var(--font-size-s);
+  margin-top: var(--font-size-xs);
+}
+
+@keyframes animeLeft {
+  to {
+    opacity: 1;
+    transform: initial;
+  }
 }

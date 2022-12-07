@@ -1,16 +1,17 @@
 .wrapper {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .input {
   border: 1px solid #eee;
+  color: #eee;
   display: block;
   width: 100%;
   font-size: var(--font-size-s);
-  padding: .8rem;
-  border-radius: .4rem;
+  padding: 0.8rem;
+  border-radius: 0.4rem;
   background: var(--color-bg);
-  transition: .2;
+  transition: 0.2;
 }
 
 .input:hover,
@@ -24,11 +25,5 @@
   display: block;
   font-size: var(--font-size-m);
   line-height: 1;
-  padding-bottom: .5rem;
-}
-
-.error {
-  color: #f31;
-  font-size: var(--font-size-s);
-  margin-top: var(--font-size-xs);
+  padding-bottom: 0.5rem;
 }

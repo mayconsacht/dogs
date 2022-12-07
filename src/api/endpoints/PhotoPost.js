@@ -38,30 +38,30 @@ const PhotoPost = () => {
   return (
     <form onSubmit={handleSubmit}>
       <input
-        type="text"
-        placeholder="Token"
+        type='text'
+        placeholder='Token'
         value={token}
         onChange={({ target }) => setToken(target.value)}
       />
       <input
-        type="text"
-        placeholder="Nome"
+        type='text'
+        placeholder='Nome'
         value={nome}
         onChange={({ target }) => setNome(target.value)}
       />
       <input
-        type="text"
-        placeholder="Peso"
+        type='text'
+        placeholder='Peso'
         value={peso}
         onChange={({ target }) => setPeso(target.value)}
       />
       <input
-        type="text"
-        placeholder="Idade"
+        type='text'
+        placeholder='Idade'
         value={idade}
         onChange={({ target }) => setIdade(target.value)}
       />
-      <input type="file" onChange={({ target }) => setImg(target.files[0])} />
+      <input type='file' onChange={({ target }) => setImg(target.files[0])} />
       <button>Enviar</button>
     </form>
   );
