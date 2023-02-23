@@ -4,7 +4,7 @@ import { Button } from '../../components/Button';
 import Error from '../../components/Helper/Error';
 import styles from './LoginForm.module.css';
 import { USER_POST } from '../../api';
-import useFetch from '../../hooks/useFetch';
+import { useFetch } from '../../hooks/useFetch';
 import { useUser } from '../../context/user/hooks';
 
 export const LoginCreate = () => {

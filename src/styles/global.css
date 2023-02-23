@@ -72,9 +72,13 @@ input {
 }
 
 .container {
-  max-width: 50rem;
+  max-width: 60rem;
   padding: 0 1rem;
   margin: 0 auto;
+}
+
+.mainContainer {
+  margin-top: 4rem;
 }
 
 .title {

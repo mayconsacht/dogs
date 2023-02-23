@@ -1,3 +1,9 @@
+import { Feed } from './Feed';
+
 export const Home = () => {
-  return <div>Home</div>;
+  return (
+    <section className='container mainContainer'>
+      <Feed />
+    </section>
+  );
 };
