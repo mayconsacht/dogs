@@ -77,6 +77,10 @@ input {
   margin: 0 auto;
 }
 
+.mainContainer {
+  margin-top: 4rem;
+}
+
 .title {
   font-weight: var(--base-type);
   line-height: 1;
