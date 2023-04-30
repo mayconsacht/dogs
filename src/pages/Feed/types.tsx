@@ -1,8 +1,8 @@
 export type Post = {
+  id: Number;
   acessos: string;
   author: string;
   date: Date;
-  id: Number;
   idade: string;
   peso: string;
   src: string;
