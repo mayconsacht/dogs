@@ -1,14 +1,18 @@
-import React, { Key, useEffect } from 'react';
+import React, { Dispatch, Key, SetStateAction, useEffect } from 'react';
 import { PHOTOS_GET } from '../../api';
 import Error from '../../components/Helper/Error';
 import Loading from '../../components/Helper/Loading';
 import { useFetch } from '../../hooks/useFetch';
 import FeedPhotosItem from './FeedPhotosItem';
-import { Post } from './types';
+import { Photo } from './types';
 import styles from './FeedPhotos.module.css';
 
-export const FeedPhotos = () => {
-  const { data, loading, error, request } = useFetch<Post[]>();
+type Props = {
+  setModalPhoto: Dispatch<SetStateAction<Photo | null>>;
+};
+
+export const FeedPhotos = ({ setModalPhoto }: Props) => {
+  const { data, loading, error, request } = useFetch<Photo[]>();
 
   useEffect(() => {
     async function fetchPhotos() {
@@ -26,7 +30,11 @@ export const FeedPhotos = () => {
     return (
       <ul className={styles.feed}>
         {data.map((item) => (
-          <FeedPhotosItem key={item.id as Key} post={item} />
+          <FeedPhotosItem
+            key={item.id as Key}
+            post={item}
+            setModalPhoto={setModalPhoto}
+          />
         ))}
       </ul>
     );

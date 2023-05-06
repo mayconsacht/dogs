@@ -1,6 +1,6 @@
 const URL_API = 'https://dogsapi.origamid.dev/json';
 
-export function TOKEN_POST(body) {
+export function TOKEN_POST(body: any) {
   return {
     url: `${URL_API}/jwt-auth/v1/token`,
     options: {
@@ -13,7 +13,7 @@ export function TOKEN_POST(body) {
   };
 }
 
-export function TOKEN_VALIDATE_POST(token) {
+export function TOKEN_VALIDATE_POST(token: any) {
   return {
     url: `${URL_API}/jwt-auth/v1/token/validate`,
     options: {
@@ -25,7 +25,7 @@ export function TOKEN_VALIDATE_POST(token) {
   };
 }
 
-export function USER_GET(token) {
+export function USER_GET(token: any) {
   return {
     url: `${URL_API}/api/user`,
     options: {
@@ -37,7 +37,7 @@ export function USER_GET(token) {
   };
 }
 
-export function USER_POST(body) {
+export function USER_POST(body: any) {
   return {
     url: `${URL_API}/api/user`,
     options: {
@@ -50,7 +50,7 @@ export function USER_POST(body) {
   };
 }
 
-export function PHOTO_POST(formData, token) {
+export function PHOTO_POST(formData: any, token: any) {
   return {
     url: `${URL_API}/api/photo`,
     options: {
@@ -63,9 +63,18 @@ export function PHOTO_POST(formData, token) {
   };
 }
 
-export function PHOTOS_GET({ page, total, user }) {
+export function PHOTOS_GET({ page, total, user }: any) {
   return {
     url: `${URL_API}/api/photo/?_page=${page}&_total=${total}&_user=${user}`,
+    options: {
+      method: 'GET',
+    },
+  };
+}
+
+export function PHOTO_GET(id: Number) {
+  return {
+    url: `${URL_API}/api/photo/${id}`,
     options: {
       method: 'GET',
     },
