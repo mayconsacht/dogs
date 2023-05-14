@@ -10,11 +10,6 @@ type Props = {
 };
 
 export const PostContent = ({ photo, comments }: Props) => {
-  useEffect(() => {
-    console.log(photo.author);
-    console.log(comments);
-  }, [photo.id]);
-
   return (
     <div className={styles.photo}>
       <div className={styles.img}>

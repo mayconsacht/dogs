@@ -23,7 +23,7 @@ export const LoginForm = () => {
   return (
     <section className='animeLeft'>
       <h1 className='title'>Sign in</h1>
-      {login ? 'true' : 'false'}
+
       <form className={styles.form} onSubmit={handleSubmit}>
         <Input label='Username' type='text' name='username' {...username} />
         <Input label='Password' type='password' name='password' {...password} />

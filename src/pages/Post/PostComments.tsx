@@ -1,5 +1,6 @@
-import React from 'react';
+import { useUser } from '../../context/user/hooks';
 import { Comment, Photo } from '../Feed/types';
+import PostCommentsForm from './PostCommentsForm';
 
 type Props = {
   id: Number;
@@ -7,7 +8,8 @@ type Props = {
 };
 
 export const PostComments = ({ id, comments }: Props) => {
-  return <div>PostComments</div>;
+  const { login } = useUser();
+  return <div>{login && <PostCommentsForm id={id} />}</div>;
 };
 
 export default PostComments;
