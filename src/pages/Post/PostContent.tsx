@@ -1,8 +1,9 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Photo, Comment } from '../Feed/types';
 import PostComments from './PostComments';
 import styles from './PostContent.module.css';
+import { useUser } from '../../context/user/hooks';
+import PostDelete from './PostDelete';
 
 type Props = {
   photo: Photo;
@@ -10,11 +11,7 @@ type Props = {
 };
 
 export const PostContent = ({ photo, comments }: Props) => {
-  useEffect(() => {
-    console.log(photo.author);
-    console.log(comments);
-  }, [photo.id]);
-
+  const user = useUser();
   return (
     <div className={styles.photo}>
       <div className={styles.img}>
@@ -23,7 +20,12 @@ export const PostContent = ({ photo, comments }: Props) => {
       <div className={styles.details}>
         <div>
           <p className={styles.author}>
-            <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
+            {user.data && user.data.username === photo.author ? (
+              <PostDelete id={photo.id} />
+            ) : (
+              <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
+            )}
+
             <span className={styles.visualizations}>{photo.acessos}</span>
           </p>
           <h1 className='title'>
@@ -35,7 +37,7 @@ export const PostContent = ({ photo, comments }: Props) => {
           </ul>
         </div>
       </div>
-      <PostComments id={photo.id} comments={photo.comments} />
+      <PostComments id={photo.id} comments={comments} />
     </div>
   );
 };
