@@ -81,7 +81,7 @@ export function PHOTO_GET(id: Number) {
   };
 }
 
-export function COMMENT_POST(id: Number, body: string) {
+export function COMMENT_POST(id: Number, body: any) {
   return {
     url: `${URL_API}/api/comment/${id}`,
     options: {
@@ -91,6 +91,18 @@ export function COMMENT_POST(id: Number, body: string) {
         Authorization: `Bearer ${window.localStorage.getItem('token')}`,
       },
       body: JSON.stringify(body),
+    },
+  };
+}
+
+export function POST_DELETE(id: Number) {
+  return {
+    url: `${URL_API}/api/photo/${id}`,
+    options: {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${window.localStorage.getItem('token')}`,
+      },
     },
   };
 }

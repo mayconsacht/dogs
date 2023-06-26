@@ -1,17 +1,17 @@
 import React, { ChangeEventHandler } from 'react';
-import { ChangeEvent } from 'react';
-import { Photo } from '../Feed/types';
 import { ReactComponent as Enviar } from '../../assets/send.svg';
 import { useFetch } from '../../hooks/useFetch';
 import { COMMENT_POST } from '../../api';
-
+import { Comment } from '../Feed/types';
+import styles from './PostCommentsForm.module.css';
 type Props = {
   id: Number;
+  setComments: React.Dispatch<React.SetStateAction<Comment[]>>;
 };
 
-const PostCommentsForm = ({ id }: Props) => {
+const PostCommentsForm = ({ id, setComments }: Props) => {
   const [comment, setComment] = React.useState('');
-  const { request, error } = useFetch();
+  const { request } = useFetch();
 
   const handleCommentChange: ChangeEventHandler<HTMLTextAreaElement> = (
     event
@@ -22,13 +22,18 @@ const PostCommentsForm = ({ id }: Props) => {
   async function handleOnSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const { url, options } = COMMENT_POST(id, comment);
-    request(url, options);
+    const { url, options } = COMMENT_POST(id, { comment });
+    const { response, json } = await request(url, options);
+    if (response?.ok) {
+      setComments((comments) => [...comments, json] as Comment[]);
+      setComment('');
+    }
   }
 
   return (
-    <form onSubmit={handleOnSubmit}>
+    <form className={styles.form} onSubmit={handleOnSubmit}>
       <textarea
+        className={styles.textarea}
         id='comment'
         name='comment'
         placeholder='Comment'
@@ -36,7 +41,7 @@ const PostCommentsForm = ({ id }: Props) => {
         onChange={handleCommentChange}
       />
 
-      <button>
+      <button className={styles.button}>
         <Enviar />
       </button>
     </form>
