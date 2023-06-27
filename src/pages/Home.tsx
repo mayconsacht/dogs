@@ -1,3 +1,4 @@
+import Loading from '../components/Helper/Loading';
 import { Feed } from './Feed';
 
 export const Home = () => {
