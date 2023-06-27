@@ -4,6 +4,7 @@ import PostComments from './PostComments';
 import styles from './PostContent.module.css';
 import { useUser } from '../../context/user/hooks';
 import PostDelete from './PostDelete';
+import Image from '../../components/Helper/Image';
 
 type Props = {
   photo: Photo;
@@ -15,7 +16,7 @@ export const PostContent = ({ photo, comments }: Props) => {
   return (
     <div className={styles.photo}>
       <div className={styles.img}>
-        <img src={photo.src} alt={photo.title} />
+        <Image src={photo.src} alt={photo.title} />
       </div>
       <div className={styles.details}>
         <div>
