@@ -1,6 +1,7 @@
 import { Photo } from './types';
 import styles from './FeedPhotosItem.module.css';
 import { Dispatch, SetStateAction } from 'react';
+import Image from '../../components/Helper/Image';
 
 interface Props {
   post: Photo;
@@ -14,7 +15,7 @@ export const FeedPhotosItem = ({ post, setModalPhoto }: Props) => {
 
   return (
     <li className={`${styles.photo} animeLeft`} onClick={handleClick}>
-      <img src={post.src} alt={post.title} />
+      <Image src={post.src} alt={post.title} />
       <span className={styles.views}>{post.acessos}</span>
     </li>
   );
