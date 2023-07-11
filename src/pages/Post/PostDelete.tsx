@@ -3,7 +3,7 @@ import styles from './PostDelete.module.css';
 import { POST_DELETE } from '../../api';
 
 type Props = {
-  id: Number;
+  id: string;
 };
 
 const PostDelete = ({ id }: Props) => {

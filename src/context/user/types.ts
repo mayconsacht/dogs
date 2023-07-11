@@ -8,6 +8,7 @@ export type Context = {
 };
 
 export type User = {
+  id: string;
   username: string;
 };
 

@@ -12,7 +12,7 @@ export type Comment = {
 };
 
 export type Photo = {
-  id: Number;
+  id: string;
   acessos: string;
   author: string;
   date: Date;
