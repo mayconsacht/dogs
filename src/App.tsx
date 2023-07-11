@@ -8,6 +8,7 @@ import { Login } from './pages/Login/Login';
 import { UserStorage } from './context/user/UserContext';
 import ProtectedRoute from './components/Helper/ProtectedRoute';
 import { Profile } from './pages/Profile/Profile';
+import { Post } from './pages/Post/Post';
 
 export const App = () => {
   return (
@@ -26,6 +27,7 @@ export const App = () => {
                 </ProtectedRoute>
               }
             />
+            <Route path='post/:id' element={<Post />} />
           </Routes>
           <Footer />
         </UserStorage>

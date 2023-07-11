@@ -30,7 +30,13 @@ const FeedModal = ({ post, setModalPhoto }: Props) => {
     <div className={styles.modal} onClick={handleOutsideClick}>
       {error && <Error error={error} />}
       {loading && <Loading />}
-      {data && <PostContent photo={data.photo} comments={data.comments} />}
+      {data && (
+        <PostContent
+          photo={data.photo}
+          single={false}
+          comments={data.comments}
+        />
+      )}
     </div>
   );
 };

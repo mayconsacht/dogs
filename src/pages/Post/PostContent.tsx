@@ -9,12 +9,13 @@ import Image from '../../components/Helper/Image';
 type Props = {
   photo: Photo;
   comments: Comment[];
+  single: boolean;
 };
 
-export const PostContent = ({ photo, comments }: Props) => {
+export const PostContent = ({ photo, comments, single }: Props) => {
   const user = useUser();
   return (
-    <div className={styles.photo}>
+    <div className={`${styles.photo} ${single ? styles.single : ''}`}>
       <div className={styles.img}>
         <Image src={photo.src} alt={photo.title} />
       </div>
@@ -38,7 +39,7 @@ export const PostContent = ({ photo, comments }: Props) => {
           </ul>
         </div>
       </div>
-      <PostComments id={photo.id} comments={comments} />
+      <PostComments id={photo.id} comments={comments} single={single} />
     </div>
   );
 };

@@ -5,11 +5,12 @@ import PostCommentsForm from './PostCommentsForm';
 import styles from './PostComments.module.css';
 
 type Props = {
-  id: Number;
+  id: string;
+  single: boolean;
   comments: Comment[];
 };
 
-export const PostComments = ({ id, comments }: Props) => {
+export const PostComments = ({ id, comments, single }: Props) => {
   const [internalComments, setComments] = React.useState(() =>
     comments ? comments : []
   );
@@ -23,7 +24,10 @@ export const PostComments = ({ id, comments }: Props) => {
 
   return (
     <>
-      <ul ref={commentsSection} className={styles.comments}>
+      <ul
+        ref={commentsSection}
+        className={`${styles.comments} ${single ? styles.single : ''}`}
+      >
         {internalComments.map((comment) => (
           <li key={comment.comment_ID}>
             <b>{comment.comment_author}: </b>
@@ -31,7 +35,9 @@ export const PostComments = ({ id, comments }: Props) => {
           </li>
         ))}
       </ul>
-      {login && <PostCommentsForm id={id} setComments={setComments} />}
+      {login && (
+        <PostCommentsForm id={id} setComments={setComments} single={single} />
+      )}
     </>
   );
 };

@@ -5,11 +5,12 @@ import { COMMENT_POST } from '../../api';
 import { Comment } from '../Feed/types';
 import styles from './PostCommentsForm.module.css';
 type Props = {
-  id: Number;
+  id: string;
+  single: boolean;
   setComments: React.Dispatch<React.SetStateAction<Comment[]>>;
 };
 
-const PostCommentsForm = ({ id, setComments }: Props) => {
+const PostCommentsForm = ({ id, setComments, single }: Props) => {
   const [comment, setComment] = React.useState('');
   const { request } = useFetch();
 
@@ -31,7 +32,10 @@ const PostCommentsForm = ({ id, setComments }: Props) => {
   }
 
   return (
-    <form className={styles.form} onSubmit={handleOnSubmit}>
+    <form
+      className={`${styles.form} ${single ? styles.single : ''}`}
+      onSubmit={handleOnSubmit}
+    >
       <textarea
         className={styles.textarea}
         id='comment'

@@ -72,7 +72,7 @@ export function PHOTOS_GET({ page, total, user }: any) {
   };
 }
 
-export function PHOTO_GET(id: Number) {
+export function PHOTO_GET(id: string) {
   return {
     url: `${URL_API}/api/photo/${id}`,
     options: {
@@ -81,7 +81,7 @@ export function PHOTO_GET(id: Number) {
   };
 }
 
-export function COMMENT_POST(id: Number, body: any) {
+export function COMMENT_POST(id: string, body: any) {
   return {
     url: `${URL_API}/api/comment/${id}`,
     options: {
@@ -95,7 +95,7 @@ export function COMMENT_POST(id: Number, body: any) {
   };
 }
 
-export function POST_DELETE(id: Number) {
+export function POST_DELETE(id: string) {
   return {
     url: `${URL_API}/api/photo/${id}`,
     options: {
