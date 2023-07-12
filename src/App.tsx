@@ -9,26 +9,32 @@ import { UserStorage } from './context/user/UserContext';
 import ProtectedRoute from './components/Helper/ProtectedRoute';
 import { Profile } from './pages/Profile/Profile';
 import { Post } from './pages/Post/Post';
+import { UserProfile } from './pages/Profile/UserProfile';
+import { NotFound } from './components/NotFound/NotFound';
 
 export const App = () => {
   return (
-    <div>
+    <div className='app'>
       <BrowserRouter>
         <UserStorage>
           <NavBar />
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='login/*' element={<Login />} />
-            <Route
-              path='profile/*'
-              element={
-                <ProtectedRoute>
-                  <Profile />
-                </ProtectedRoute>
-              }
-            />
-            <Route path='post/:id' element={<Post />} />
-          </Routes>
+          <main className='app-body'>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='login/*' element={<Login />} />
+              <Route
+                path='profile/*'
+                element={
+                  <ProtectedRoute>
+                    <Profile />
+                  </ProtectedRoute>
+                }
+              />
+              <Route path='post/:id' element={<Post />} />
+              <Route path='profile-feed/:user' element={<UserProfile />} />
+              <Route path='*' element={<NotFound />} />
+            </Routes>
+          </main>
           <Footer />
         </UserStorage>
       </BrowserRouter>

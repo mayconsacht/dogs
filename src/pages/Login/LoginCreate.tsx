@@ -6,6 +6,7 @@ import styles from './LoginForm.module.css';
 import { USER_POST } from '../../api';
 import { useFetch } from '../../hooks/useFetch';
 import { useUser } from '../../context/user/hooks';
+import { Head } from '../../components/Helper/Head';
 
 export const LoginCreate = () => {
   const username = useForm();
@@ -32,6 +33,7 @@ export const LoginCreate = () => {
 
   return (
     <section className='animeLeft'>
+      <Head title='Create your account' />
       <h1 className='title'>Sign up</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
         <Input label='Username' type='text' name='username' {...username} />

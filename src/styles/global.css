@@ -121,3 +121,13 @@ input {
     transform: initial;
   }
 }
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh + 6rem);
+}
+
+.app-body {
+  flex: 1;
+}

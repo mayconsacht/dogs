@@ -8,6 +8,7 @@ import { useFetch } from '../../hooks/useFetch';
 import { PHOTO_POST } from '../../api';
 import Error from '../../components/Helper/Error';
 import { useNavigate } from 'react-router-dom';
+import { Head } from '../../components/Helper/Head';
 
 type Imagem = {
   raw: File;
@@ -52,6 +53,7 @@ export const ProfilePhotoPost = () => {
 
   return (
     <section className={`${styles.photoPost} animeLeft`}>
+      <Head title='Post your picture' />
       <form onSubmit={handleSubmit}>
         <Input label='Name' type='text' name='name' {...name}></Input>
         <Input label='Weight' type='number' name='weight' {...weight}></Input>
