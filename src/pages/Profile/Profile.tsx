@@ -6,6 +6,7 @@ import { ProfileStats } from './ProfileStats';
 import { UserContext } from '../../context/user/UserContext';
 import React from 'react';
 import { Post } from '../Post/Post';
+import { NotFound } from '../../components/NotFound/NotFound';
 
 export const Profile = () => {
   const context = React.useContext(UserContext);
@@ -16,6 +17,7 @@ export const Profile = () => {
         <Route path='/' element={<Feed userId={context!.data!.id} />} />
         <Route path='post' element={<ProfilePhotoPost />} />
         <Route path='stats' element={<ProfileStats />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </section>
   );

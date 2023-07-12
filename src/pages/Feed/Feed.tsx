@@ -2,14 +2,14 @@ import React from 'react';
 import FeedModal from './FeedModal';
 import FeedPhotos from './FeedPhotos';
 import { Photo } from './types';
-import { User } from '../../context/user/types';
+import PropTypes from 'prop-types';
 
 type Props = {
   userId?: string;
 };
 
 export const Feed = ({ userId = '0' }: Props) => {
-  const [modalPhoto, setModalPhoto] = React.useState<Photo | null>({} as Photo);
+  const [modalPhoto, setModalPhoto] = React.useState<Photo | null>(null);
   const [pages, setPages] = React.useState([1]);
   const [infinite, setInfinite] = React.useState(true);
 

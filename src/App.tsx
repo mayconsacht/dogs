@@ -9,6 +9,8 @@ import { UserStorage } from './context/user/UserContext';
 import ProtectedRoute from './components/Helper/ProtectedRoute';
 import { Profile } from './pages/Profile/Profile';
 import { Post } from './pages/Post/Post';
+import { UserProfile } from './pages/Profile/UserProfile';
+import { NotFound } from './components/NotFound/NotFound';
 
 export const App = () => {
   return (
@@ -28,6 +30,8 @@ export const App = () => {
               }
             />
             <Route path='post/:id' element={<Post />} />
+            <Route path='profile/:user' element={<UserProfile />} />
+            <Route path='*' element={<NotFound />} />
           </Routes>
           <Footer />
         </UserStorage>
