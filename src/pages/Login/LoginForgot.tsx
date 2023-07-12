@@ -24,7 +24,7 @@ export const LoginForgot = () => {
   }
 
   return (
-    <section>
+    <section className='animeLeft'>
       <Head title='Forgot your password?' />
       <h1 className='title'>Forgot your password?</h1>
       {data ? (
