@@ -30,7 +30,7 @@ export const App = () => {
               }
             />
             <Route path='post/:id' element={<Post />} />
-            <Route path='profile/:user' element={<UserProfile />} />
+            <Route path='profile-feed/:user' element={<UserProfile />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
           <Footer />

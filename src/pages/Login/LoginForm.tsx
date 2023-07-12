@@ -6,6 +6,7 @@ import Error from '../../components/Helper/Error';
 import styles from './LoginForm.module.css';
 import stylesButton from '../../components/Button/Button.module.css';
 import { useUser } from '../../context/user/hooks';
+import { Head } from '../../components/Helper/Head';
 
 export const LoginForm = () => {
   const username = useForm();
@@ -22,8 +23,8 @@ export const LoginForm = () => {
 
   return (
     <section className='animeLeft'>
+      <Head title='Login' />
       <h1 className='title'>Sign in</h1>
-
       <form className={styles.form} onSubmit={handleSubmit}>
         <Input label='Username' type='text' name='username' {...username} />
         <Input label='Password' type='password' name='password' {...password} />

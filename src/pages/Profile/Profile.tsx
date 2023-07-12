@@ -5,13 +5,14 @@ import { ProfilePhotoPost } from './ProfilePhotoPost';
 import { ProfileStats } from './ProfileStats';
 import { UserContext } from '../../context/user/UserContext';
 import React from 'react';
-import { Post } from '../Post/Post';
 import { NotFound } from '../../components/NotFound/NotFound';
+import { Head } from '../../components/Helper/Head';
 
 export const Profile = () => {
   const context = React.useContext(UserContext);
   return (
     <section className='container'>
+      <Head title='My account' />
       <ProfileHeader />
       <Routes>
         <Route path='/' element={<Feed userId={context!.data!.id} />} />

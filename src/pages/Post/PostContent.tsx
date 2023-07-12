@@ -25,7 +25,7 @@ export const PostContent = ({ photo, comments, single }: Props) => {
             {user.data && user.data.username === photo.author ? (
               <PostDelete id={photo.id} />
             ) : (
-              <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
+              <Link to={`/profile-feed/${photo.author}`}>@{photo.author}</Link>
             )}
 
             <span className={styles.visualizations}>{photo.acessos}</span>

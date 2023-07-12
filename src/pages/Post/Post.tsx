@@ -6,6 +6,7 @@ import Error from '../../components/Helper/Error';
 import Loading from '../../components/Helper/Loading';
 import PostContent from './PostContent';
 import { Comment, Photo } from '../Feed/types';
+import { Head } from '../../components/Helper/Head';
 
 type SinglePhoto = {
   photo: Photo;
@@ -26,6 +27,7 @@ export const Post = () => {
   if (data)
     return (
       <section className='container mainContainer'>
+        <Head title={data.photo.title} />
         <PostContent
           photo={data.photo}
           single={true}

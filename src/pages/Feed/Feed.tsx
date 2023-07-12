@@ -2,7 +2,6 @@ import React from 'react';
 import FeedModal from './FeedModal';
 import FeedPhotos from './FeedPhotos';
 import { Photo } from './types';
-import PropTypes from 'prop-types';
 
 type Props = {
   userId?: string;
