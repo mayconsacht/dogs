@@ -132,3 +132,15 @@ export function RESET_PASSWORD(body: any) {
     },
   };
 }
+
+export function USER_STATS() {
+  return {
+    url: `${URL_API}/api/stats`,
+    options: {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${window.localStorage.getItem('token')}`,
+      },
+    },
+  };
+}
