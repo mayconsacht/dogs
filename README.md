@@ -13,8 +13,8 @@ To run the project locally, follow these steps:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/react-project-name.git
-cd react-project-name
+git clone https://github.com/mayconsacht/dogs.git
+cd dogs
 ```
 
 2. Install the dependencies:
