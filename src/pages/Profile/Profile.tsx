@@ -15,7 +15,16 @@ export const Profile = () => {
       <Head title='My account' />
       <ProfileHeader />
       <Routes>
-        <Route path='/' element={<Feed userId={context!.data!.id} />} />
+        <Route
+          path='/'
+          element={
+            context!.data != null ? (
+              <Feed userId={context!.data!.id.toString()} />
+            ) : (
+              <Feed userId='0' />
+            )
+          }
+        />
         <Route path='post' element={<ProfilePhotoPost />} />
         <Route path='stats' element={<ProfileStats />} />
         <Route path='*' element={<NotFound />} />

@@ -1,4 +1,4 @@
-const URL_API = 'https://dogsapi.origamid.dev/json';
+const URL_API = 'http://dogs.local/json';
 
 export function TOKEN_POST(body: any) {
   return {
@@ -129,6 +129,18 @@ export function RESET_PASSWORD(body: any) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(body),
+    },
+  };
+}
+
+export function USER_STATS() {
+  return {
+    url: `${URL_API}/api/stats`,
+    options: {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${window.localStorage.getItem('token')}`,
+      },
     },
   };
 }
