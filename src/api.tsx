@@ -1,4 +1,4 @@
-const URL_API = 'https://dogsapi.origamid.dev/json';
+const URL_API = 'http://dogs.local/json';
 
 export function TOKEN_POST(body: any) {
   return {

@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from './ProfileStatsGraphs.module.css';
-import { VictoryPie, VictoryChart, VictoryBar } from 'victory';
+import { VictoryPie, VictoryChart, VictoryBar, VictoryAxis } from 'victory';
+import { Stats } from './types';
 
 type Props = {
   stats: Stats[];
 };
 
 const ProfileStatsGraphs = ({ stats }: Props) => {
-  const [graph, setGrafh] = React.useState([]);
   const [total, setTotal] = React.useState(0);
   const graphData = stats.map(({ title, acessos }) => {
     return { x: title, y: Number(acessos) };
@@ -23,11 +23,58 @@ const ProfileStatsGraphs = ({ stats }: Props) => {
 
   return (
     <section className={`${styles.graph} animeLeft`}>
-      <div className={styles.total}>
-        <p>Acessos: {total}</p>
+      <div className={`${styles.total} ${styles.graphItem}`}>
+        <p>Hits: {total}</p>
       </div>
-      <div>
-        <VictoryPie data={graphData} />
+      <div className={styles.graphItem}>
+        <VictoryPie
+          data={graphData}
+          innerRadius={50}
+          padding={{ top: 20, bottom: 20, left: 80, right: 80 }}
+          style={{
+            data: {
+              fillOpacity: 0.9,
+              stroke: '#fff',
+              strokeWidth: 2,
+            },
+            labels: {
+              fontSize: 14,
+              fill: '#fff',
+            },
+          }}
+        />
+      </div>
+      <div className={styles.graphItem}>
+        <VictoryChart>
+          <VictoryAxis
+            style={{
+              axis: { stroke: 'white' },
+              tickLabels: { fill: 'white' },
+            }}
+          />
+          <VictoryAxis
+            dependentAxis
+            style={{
+              axis: { stroke: 'white' },
+              tickLabels: { fill: 'white' },
+            }}
+          />
+          <VictoryBar
+            alignment='start'
+            data={graphData}
+            style={{
+              data: {
+                fillOpacity: 0.9,
+                stroke: '#fff',
+                strokeWidth: 2,
+              },
+              labels: {
+                fontSize: 14,
+                fill: '#fff',
+              },
+            }}
+          ></VictoryBar>
+        </VictoryChart>
       </div>
     </section>
   );

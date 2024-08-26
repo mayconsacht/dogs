@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Key } from 'react';
 import FeedModal from './FeedModal';
 import FeedPhotos from './FeedPhotos';
 import { Photo } from './types';
@@ -45,6 +45,7 @@ export const Feed = ({ userId = '0' }: Props) => {
       )}
       {pages.map((page) => (
         <FeedPhotos
+          key={page as Key}
           page={page}
           userId={userId}
           setModalPhoto={setModalPhoto}

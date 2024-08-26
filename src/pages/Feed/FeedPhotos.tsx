@@ -47,9 +47,9 @@ export const FeedPhotos = ({
   if (data) {
     return (
       <ul className={styles.feed}>
-        {data.map((item) => (
+        {data.map((item, index) => (
           <FeedPhotosItem
-            key={item.id as Key}
+            key={index as Key}
             post={item}
             setModalPhoto={setModalPhoto}
           />

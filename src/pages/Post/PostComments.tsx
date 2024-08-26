@@ -18,7 +18,6 @@ export const PostComments = ({ id, comments, single }: Props) => {
   const { login } = useUser();
 
   React.useEffect(() => {
-    console.log(commentsSection.current!.scrollHeight);
     commentsSection.current!.scrollTop = commentsSection.current!.scrollHeight;
   }, [comments]);
 
