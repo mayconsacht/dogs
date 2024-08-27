@@ -1,4 +1,4 @@
-const URL_API = 'https://dogs-wrp.rf.gd/json';
+const URL_API = 'https://dogs-wrp.rf.gd';
 
 export function TOKEN_POST(body: any) {
   return {
@@ -65,7 +65,7 @@ export function PHOTO_POST(formData: any, token: any) {
 
 export function PHOTOS_GET({ page, total, user }: any) {
   return {
-    url: `${URL_API}/api/photo/?_page=${page}&_total=${total}&_user=${user}`,
+    url: `${URL_API}`,
     options: {
       method: 'GET',
     },
