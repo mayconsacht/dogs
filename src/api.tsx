@@ -1,4 +1,4 @@
-const URL_API = 'http://dogs.local/json';
+const URL_API = 'https://dogs-wrp.rf.gd/json';
 
 export function TOKEN_POST(body: any) {
   return {
