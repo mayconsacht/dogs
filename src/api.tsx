@@ -1,4 +1,4 @@
-const URL_API = 'https://dogs-wrp.rf.gd/json';
+const URL_API = 'https://dogs-server.mayconsacht.com';
 
 export function TOKEN_POST(body: any) {
   return {
