@@ -1,4 +1,4 @@
-const URL_API = 'https://dogs-server.mayconsacht.com';
+const URL_API = 'https://dogs-server.mayconsacht.com/api';
 
 export function TOKEN_POST(body: any) {
   return {
@@ -27,7 +27,7 @@ export function TOKEN_VALIDATE_POST(token: any) {
 
 export function USER_GET(token: any) {
   return {
-    url: `${URL_API}/api/user`,
+    url: `${URL_API}/user`,
     options: {
       method: 'GET',
       headers: {
@@ -39,7 +39,7 @@ export function USER_GET(token: any) {
 
 export function USER_POST(body: any) {
   return {
-    url: `${URL_API}/api/user`,
+    url: `${URL_API}/user`,
     options: {
       method: 'POST',
       headers: {
@@ -52,7 +52,7 @@ export function USER_POST(body: any) {
 
 export function PHOTO_POST(formData: any, token: any) {
   return {
-    url: `${URL_API}/api/photo`,
+    url: `${URL_API}/photo`,
     options: {
       method: 'POST',
       headers: {
@@ -65,7 +65,7 @@ export function PHOTO_POST(formData: any, token: any) {
 
 export function PHOTOS_GET({ page, total, user }: any) {
   return {
-    url: `${URL_API}/api/photo/?page=${page}&total=${total}&user=${user}`,
+    url: `${URL_API}/photo/?page=${page}&total=${total}&user=${user}`,
     options: {
       method: 'GET',
     },
@@ -74,7 +74,7 @@ export function PHOTOS_GET({ page, total, user }: any) {
 
 export function PHOTO_GET(id: string) {
   return {
-    url: `${URL_API}/api/photo/${id}`,
+    url: `${URL_API}/photo/${id}`,
     options: {
       method: 'GET',
     },
@@ -83,7 +83,7 @@ export function PHOTO_GET(id: string) {
 
 export function COMMENT_POST(id: string, body: any) {
   return {
-    url: `${URL_API}/api/comment/${id}`,
+    url: `${URL_API}/comment/${id}`,
     options: {
       method: 'POST',
       headers: {
@@ -97,7 +97,7 @@ export function COMMENT_POST(id: string, body: any) {
 
 export function POST_DELETE(id: string) {
   return {
-    url: `${URL_API}/api/photo/${id}`,
+    url: `${URL_API}/photo/${id}`,
     options: {
       method: 'DELETE',
       headers: {
@@ -109,7 +109,7 @@ export function POST_DELETE(id: string) {
 
 export function FORGOT_PASSWORD(body: any) {
   return {
-    url: `${URL_API}/api/password/lost`,
+    url: `${URL_API}/password/lost`,
     options: {
       method: 'POST',
       headers: {
@@ -122,7 +122,7 @@ export function FORGOT_PASSWORD(body: any) {
 
 export function RESET_PASSWORD(body: any) {
   return {
-    url: `${URL_API}/api/password/reset`,
+    url: `${URL_API}/password/reset`,
     options: {
       method: 'POST',
       headers: {
@@ -135,7 +135,7 @@ export function RESET_PASSWORD(body: any) {
 
 export function USER_STATS() {
   return {
-    url: `${URL_API}/api/stats`,
+    url: `${URL_API}/stats`,
     options: {
       method: 'GET',
       headers: {
