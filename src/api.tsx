@@ -65,7 +65,7 @@ export function PHOTO_POST(formData: any, token: any) {
 
 export function PHOTOS_GET({ page, total, user }: any) {
   return {
-    url: `${URL_API}/api/photo/?_page=${page}&_total=${total}&_user=${user}`,
+    url: `${URL_API}/api/photo/?page=${page}&total=${total}&user=${user}`,
     options: {
       method: 'GET',
     },
