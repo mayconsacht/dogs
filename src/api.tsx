@@ -1,8 +1,8 @@
-const URL_API = 'https://dogs-server.mayconsacht.com';
+const URL_API = 'http://localhost:3000';
 
 export function TOKEN_POST(body: any) {
   return {
-    url: `${URL_API}/jwt-auth/v1/token`,
+    url: `${URL_API}/token`,
     options: {
       method: 'POST',
       headers: {
@@ -15,7 +15,7 @@ export function TOKEN_POST(body: any) {
 
 export function TOKEN_VALIDATE_POST(token: any) {
   return {
-    url: `${URL_API}/jwt-auth/v1/token/validate`,
+    url: `${URL_API}/token/validate`,
     options: {
       method: 'POST',
       headers: {
