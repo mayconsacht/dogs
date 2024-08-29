@@ -1,4 +1,4 @@
-const URL_API = 'https://server-dogs.mayconsacht.com';
+const URL_API = 'https://dogs-server.mayconsacht.com';
 
 export function TOKEN_POST(body: any) {
   return {
