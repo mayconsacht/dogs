@@ -5,7 +5,7 @@ import useForm from '../../hooks/useForm';
 import styles from './ProfilePhotoPost.module.css';
 import React from 'react';
 import { useFetch } from '../../hooks/useFetch';
-import { PHOTO_POST } from '../../api';
+import { PHOTO_POST, PHOTO_UPLOAD_POST } from '../../api';
 import Error from '../../components/Helper/Error';
 import { useNavigate } from 'react-router-dom';
 import { Head } from '../../components/Helper/Head';
@@ -27,19 +27,32 @@ export const ProfilePhotoPost = () => {
     if (data) navigate('/profile');
   }, [data, navigate]);
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const blobUrl = await handleUploadImage();
+
     const formData = new FormData();
-    formData.append('img', img.raw);
-    formData.append('nome', name.value);
-    formData.append('peso', weight.value);
-    formData.append('idade', age.value);
+    formData.append('img', blobUrl);
+    formData.append('name', name.value);
+    formData.append('weight', weight.value);
+    formData.append('age', age.value);
 
     const { url, options } = PHOTO_POST(
       formData,
       window.localStorage.getItem('token')
     );
-    request(url, options);
+
+    await request(url, options);
+  }
+
+  async function handleUploadImage() {
+    const { url, options } = PHOTO_UPLOAD_POST(
+      img.raw,
+      window.localStorage.getItem('token'),
+      img.raw.name
+    );
+    const result = await request(url, options);
+    return result.json;
   }
 
   function onChange(event: React.ChangeEvent<HTMLInputElement>) {

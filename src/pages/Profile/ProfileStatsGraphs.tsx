@@ -9,14 +9,14 @@ type Props = {
 
 const ProfileStatsGraphs = ({ stats }: Props) => {
   const [total, setTotal] = React.useState(0);
-  const graphData = stats.map(({ title, acessos }) => {
-    return { x: title, y: Number(acessos) };
+  const graphData = stats.map(({ title, hits }) => {
+    return { x: title, y: Number(hits) };
   });
 
   React.useEffect(() => {
     setTotal(() =>
       stats
-        .map(({ acessos }) => Number(acessos))
+        .map(({ hits }) => Number(hits))
         .reduce((last, curr) => last + curr, 0)
     );
   }, [stats]);

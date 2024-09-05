@@ -17,7 +17,7 @@ export const PostContent = ({ photo, comments, single }: Props) => {
   return (
     <div className={`${styles.photo} ${single ? styles.single : ''}`}>
       <div className={styles.img}>
-        <Image src={photo.src} alt={photo.title} />
+        <Image src={photo.img} alt={photo.title} />
       </div>
       <div className={styles.details}>
         <div>
@@ -28,14 +28,14 @@ export const PostContent = ({ photo, comments, single }: Props) => {
               <Link to={`/profile-feed/${photo.author}`}>@{photo.author}</Link>
             )}
 
-            <span className={styles.visualizations}>{photo.acessos}</span>
+            <span className={styles.visualizations}>{photo.hits}</span>
           </p>
           <h1 className='title'>
             <Link to={`/post/${photo.id}`}>{photo.title}</Link>
           </h1>
           <ul className={styles.attributes}>
-            <li>{photo.peso} kg</li>
-            <li>{photo.idade} anos</li>
+            <li>{photo.weight} kg</li>
+            <li>{photo.age} anos</li>
           </ul>
         </div>
       </div>

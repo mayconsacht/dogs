@@ -63,6 +63,19 @@ export function PHOTO_POST(formData: any, token: any) {
   };
 }
 
+export function PHOTO_UPLOAD_POST(formData: any, token: any, filename: string) {
+  return {
+    url: `${URL_API}/photo/upload/?filename=${filename}`,
+    options: {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      body: formData,
+    },
+  };
+}
+
 export function PHOTOS_GET({ page, total, user }: any) {
   return {
     url: `${URL_API}/photo/?page=${page}&total=${total}&user=${user}`,

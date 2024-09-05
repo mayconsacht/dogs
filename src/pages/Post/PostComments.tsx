@@ -28,9 +28,9 @@ export const PostComments = ({ id, comments, single }: Props) => {
         className={`${styles.comments} ${single ? styles.single : ''}`}
       >
         {internalComments.map((comment) => (
-          <li key={comment.comment_ID}>
-            <b>{comment.comment_author}: </b>
-            <span>{comment.comment_content}</span>
+          <li key={comment.id}>
+            <b>{comment.author}: </b>
+            <span>{comment.content}</span>
           </li>
         ))}
       </ul>
