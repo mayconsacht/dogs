@@ -21,14 +21,16 @@ export const ProfilePhotoPost = () => {
   const age = useForm();
   const [img, setImg] = useState({} as Imagem);
   const { data, error, loading, request } = useFetch();
+  const [insertedPhoto, setInsertedPhoto] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (data) navigate('/profile');
-  }, [data, navigate]);
+    if (data && insertedPhoto) navigate('/profile');
+  }, [data, insertedPhoto, navigate]);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setInsertedPhoto(false);
     const blobUrl = await handleUploadImage();
 
     const formData = new FormData();
@@ -43,6 +45,7 @@ export const ProfilePhotoPost = () => {
     );
 
     await request(url, options);
+    setInsertedPhoto(true);
   }
 
   async function handleUploadImage() {

@@ -16,7 +16,7 @@ export const FeedPhotosItem = ({ post, setModalPhoto }: Props) => {
   return (
     <li className={`${styles.photo} animeLeft`} onClick={handleClick}>
       <Image src={post.img} alt={post.title} />
-      <span className={styles.views}>{post.hits}</span>
+      <span className={styles.views}>{post.totalHits}</span>
     </li>
   );
 };

@@ -44,7 +44,7 @@ export const FeedPhotos = ({
   if (error) return <Error error={error} />;
   if (loading) return <Loading />;
 
-  if (data) {
+  if (data && data.length > 0) {
     return (
       <ul className={styles.feed}>
         {data.map((item, index) => (

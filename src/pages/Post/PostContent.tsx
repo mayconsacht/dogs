@@ -28,14 +28,14 @@ export const PostContent = ({ photo, comments, single }: Props) => {
               <Link to={`/profile-feed/${photo.author}`}>@{photo.author}</Link>
             )}
 
-            <span className={styles.visualizations}>{photo.hits}</span>
+            <span className={styles.visualizations}>{photo.totalHits}</span>
           </p>
           <h1 className='title'>
             <Link to={`/post/${photo.id}`}>{photo.title}</Link>
           </h1>
           <ul className={styles.attributes}>
             <li>{photo.weight} kg</li>
-            <li>{photo.age} anos</li>
+            <li>{photo.age} age</li>
           </ul>
         </div>
       </div>

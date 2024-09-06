@@ -96,7 +96,7 @@ export function PHOTO_GET(id: string) {
 
 export function COMMENT_POST(id: string, body: any) {
   return {
-    url: `${URL_API}/comment/${id}`,
+    url: `${URL_API}/photo/${id}/comment`,
     options: {
       method: 'POST',
       headers: {
@@ -120,35 +120,9 @@ export function POST_DELETE(id: string) {
   };
 }
 
-export function FORGOT_PASSWORD(body: any) {
-  return {
-    url: `${URL_API}/password/lost`,
-    options: {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
-    },
-  };
-}
-
-export function RESET_PASSWORD(body: any) {
-  return {
-    url: `${URL_API}/password/reset`,
-    options: {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
-    },
-  };
-}
-
 export function USER_STATS() {
   return {
-    url: `${URL_API}/stats`,
+    url: `${URL_API}/photo/stats`,
     options: {
       method: 'GET',
       headers: {

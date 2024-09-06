@@ -37,10 +37,6 @@ export const LoginForm = () => {
         <Error error={error && 'Incorrect login or password provided'} />
       </form>
 
-      <Link className={styles.forgot} to='/login/forgot'>
-        Forgot password?
-      </Link>
-
       <div className={styles.register}>
         <h2 className={styles.subtitle}>Sign up</h2>
         <p>New to Dogs? Create an account!</p>
