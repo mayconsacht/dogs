@@ -19,9 +19,9 @@ export const Profile = () => {
           path='/'
           element={
             context!.data != null ? (
-              <Feed userId={context!.data!.id.toString()} />
+              <Feed userId={context!.data!.id.toString()} emptyMessage={true} />
             ) : (
-              <Feed userId='0' />
+              <Feed userId='0' emptyMessage={true} />
             )
           }
         />

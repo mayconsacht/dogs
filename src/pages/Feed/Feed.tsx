@@ -2,12 +2,14 @@ import React, { Key } from 'react';
 import FeedModal from './FeedModal';
 import FeedPhotos from './FeedPhotos';
 import { Photo } from './types';
+import { ReactElement } from 'react';
 
 type Props = {
   userId?: string;
+  emptyMessage?: boolean;
 };
 
-export const Feed = ({ userId = '0' }: Props) => {
+export const Feed = ({ userId = '0', emptyMessage = false }: Props) => {
   const [modalPhoto, setModalPhoto] = React.useState<Photo | null>(null);
   const [pages, setPages] = React.useState([1]);
   const [infinite, setInfinite] = React.useState(true);
@@ -50,6 +52,7 @@ export const Feed = ({ userId = '0' }: Props) => {
           userId={userId}
           setModalPhoto={setModalPhoto}
           setInfinite={setInfinite}
+          emptyMessage={emptyMessage}
         />
       ))}
     </div>

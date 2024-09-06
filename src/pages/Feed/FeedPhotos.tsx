@@ -12,6 +12,7 @@ type Props = {
   setInfinite: Dispatch<SetStateAction<boolean>>;
   userId: string;
   page: Number;
+  emptyMessage?: boolean;
 };
 
 export const FeedPhotos = ({
@@ -19,6 +20,7 @@ export const FeedPhotos = ({
   setModalPhoto,
   userId,
   page,
+  emptyMessage = false,
 }: Props) => {
   const { data, loading, error, request } = useFetch<Photo[]>();
   const total = 6;
@@ -56,7 +58,17 @@ export const FeedPhotos = ({
         ))}
       </ul>
     );
-  } else return null;
+  } else if (emptyMessage) {
+    return (
+      <div className={styles.boxMessage}>
+        <p>
+          When you post your lovely pictures, you'll be able to see them here!
+          &#128155;
+        </p>
+      </div>
+    );
+  }
+  return null;
 };
 
 export default FeedPhotos;

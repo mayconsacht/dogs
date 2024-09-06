@@ -11,7 +11,7 @@ import { Head } from '../../components/Helper/Head';
 export const LoginForm = () => {
   const username = useForm();
   const password = useForm();
-  const { userLogin, error, loading, login } = useUser();
+  const { userLogin, error, loading } = useUser();
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();

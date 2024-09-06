@@ -12,8 +12,8 @@ const types = {
       'The password must contain at least one uppercase letter, one lowercase letter, one numerical digit, one special digit and at least 8 characters.',
   },
   number: {
-    regex: /ˆ\d+$/,
-    message: 'The value must be number',
+    regex: /^[1-9]\d*$/,
+    message: 'The value must be a valid number',
   },
 };
 

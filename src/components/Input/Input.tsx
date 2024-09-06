@@ -5,7 +5,8 @@ import styles from './Input.module.css';
 import { InputProps } from './types';
 
 export const Input = (props: CommonProps & InputProps) => {
-  const { label, type, name, value, onChange, error, onBlur } = props;
+  const { label, type, name, value, onChange, error, onBlur, min, step } =
+    props;
 
   return (
     <div className={styles.wrapper}>
@@ -18,6 +19,8 @@ export const Input = (props: CommonProps & InputProps) => {
         type={type}
         name={name}
         value={value}
+        min={min}
+        step={step}
         onChange={onChange}
         onBlur={onBlur}
       />

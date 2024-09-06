@@ -24,58 +24,70 @@ const ProfileStatsGraphs = ({ stats }: Props) => {
   return (
     <section className={`${styles.graph} animeLeft`}>
       <div className={`${styles.total} ${styles.graphItem}`}>
-        <p>Hits: {total}</p>
+        {total === 0 ? (
+          <p>
+            When you upload your photos and got views you will be able to see
+            your stats here! &#128588;
+          </p>
+        ) : (
+          <p>Your lovely photos have been viewed {total} times! &#127775;</p>
+        )}
       </div>
-      <div className={styles.graphItem}>
-        <VictoryPie
-          data={graphData}
-          innerRadius={50}
-          padding={{ top: 20, bottom: 20, left: 80, right: 80 }}
-          style={{
-            data: {
-              fillOpacity: 0.9,
-              stroke: '#fff',
-              strokeWidth: 2,
-            },
-            labels: {
-              fontSize: 14,
-              fill: '#fff',
-            },
-          }}
-        />
-      </div>
-      <div className={styles.graphItem}>
-        <VictoryChart>
-          <VictoryAxis
-            style={{
-              axis: { stroke: 'white' },
-              tickLabels: { fill: 'white' },
-            }}
-          />
-          <VictoryAxis
-            dependentAxis
-            style={{
-              axis: { stroke: 'white' },
-              tickLabels: { fill: 'white' },
-            }}
-          />
-          <VictoryBar
-            alignment='start'
-            data={graphData}
-            style={{
-              data: {
-                fillOpacity: 0.9,
-                stroke: '#fff',
-                strokeWidth: 2,
-              },
-              labels: {
-                fontSize: 14,
-                fill: '#fff',
-              },
-            }}
-          ></VictoryBar>
-        </VictoryChart>
-      </div>
+
+      {total > 0 && (
+        <>
+          <div className={styles.graphItem}>
+            <VictoryPie
+              data={graphData}
+              innerRadius={50}
+              padding={{ top: 20, bottom: 20, left: 80, right: 80 }}
+              style={{
+                data: {
+                  fillOpacity: 0.9,
+                  stroke: '#fff',
+                  strokeWidth: 2,
+                },
+                labels: {
+                  fontSize: 14,
+                  fill: '#fff',
+                },
+              }}
+            />
+          </div>
+          <div className={styles.graphItem}>
+            <VictoryChart>
+              <VictoryAxis
+                style={{
+                  axis: { stroke: 'white' },
+                  tickLabels: { fill: 'white' },
+                }}
+              />
+              <VictoryAxis
+                dependentAxis
+                style={{
+                  axis: { stroke: 'white' },
+                  tickLabels: { fill: 'white' },
+                }}
+              />
+              <VictoryBar
+                alignment='start'
+                data={graphData}
+                style={{
+                  data: {
+                    fillOpacity: 0.9,
+                    stroke: '#fff',
+                    strokeWidth: 2,
+                  },
+                  labels: {
+                    fontSize: 14,
+                    fill: '#fff',
+                  },
+                }}
+              ></VictoryBar>
+            </VictoryChart>
+          </div>
+        </>
+      )}
     </section>
   );
 };

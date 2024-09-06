@@ -13,8 +13,8 @@
 
 .total {
   grid-column: 1 / 3;
-  padding: 2rem;
-  font-size: 1.5rem;
+  padding: 1rem;
+  font-size: 1rem;
 }
 
 @media (max-width: 40rem) {

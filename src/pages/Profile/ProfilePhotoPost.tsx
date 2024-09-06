@@ -72,8 +72,22 @@ export const ProfilePhotoPost = () => {
       <Head title='Post your picture' />
       <form onSubmit={handleSubmit}>
         <Input label='Name' type='text' name='name' {...name}></Input>
-        <Input label='Weight' type='number' name='weight' {...weight}></Input>
-        <Input label='Age' type='number' name='age' {...age}></Input>
+        <Input
+          label='Weight'
+          type='number'
+          min='0'
+          step='1'
+          name='weight'
+          {...weight}
+        ></Input>
+        <Input
+          label='Age'
+          type='number'
+          min='0'
+          step='1'
+          name='age'
+          {...age}
+        ></Input>
         <input
           className={styles.file}
           type='file'
