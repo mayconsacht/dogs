@@ -2,7 +2,6 @@ export type Comment = {
   id: string;
   postId: string;
   author: string;
-  authorEmail: string;
   authorUrl: string;
   authorIp: string;
   date: string;
@@ -13,7 +12,7 @@ export type Comment = {
 
 export type Photo = {
   id: string;
-  hits: string;
+  totalHits: string;
   author: string;
   date: Date;
   age: string;
