@@ -1,6 +1,6 @@
 # 🐶 Dogs
 
-This project is a simple social media platform for dogs, designed for fun and to showcase and practice my React skills.
+This project is a simple social media platform for dogs, designed for fun.
 
 ![Demo](https://naxwwhocmsbch7dp.public.blob.vercel-storage.com/demo-2jfnvG3Pcvd1MbjkBHyZx3UUxSMksz.png)
 
